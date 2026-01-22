@@ -1,0 +1,36 @@
+🎯 Objective:
+        You’re dropped into a weird uppercase-only shell. Escape it and read the password file.
+
+Steps to be followed:
+
+Step 1: Login as bandit32
+
+ssh bandit32@bandit.labs.overthewire.org -p 2220
+Password: 56a9bf19c63d650ce78e6ec0354ee45e
+
+Step 2: Understand the trap
+
+After login, you’ll see:
+
+WELCOME TO THE UPPERCASE SHELL
+>>
+
+Commands are converted to UPPERCASE
+Normal commands like ls, cat ❌ won’t work
+
+Step 3: Escape the shell
+
+Run this: $0 (This spawns a normal bash shell)
+
+Step 4: Verify shell escape
+
+Command: whoami
+Output: bandit33
+
+Step 5: Read the final password
+
+Command: cat /etc/bandit_pass/bandit33
+
+Output:
+
+Password for Bandit 33: c9c3199ddf4121b10cf581a98d51caee
