@@ -1,0 +1,26 @@
+🎯 Objective:
+       Use a setuid binary to execute a command as another user (bandit20) and read the password.
+
+Steps to be followed:
+
+Step 1: Login as bandit19
+
+ssh bandit19@bandit.labs.overthewire.org -p 2220
+Password: cGWpMaK0v1Y0G8h6RjO5H0FJtFf2cK2m
+
+Step 2: List files
+Command: ls
+Output: bandit20-do
+
+Step 3: Understand the binary
+
+Check what it does: (command) ./bandit20-do
+It lets you run a command as bandit20.
+
+Step 4: Use it to read the password
+
+Command: ./bandit20-do cat /etc/bandit_pass/bandit20
+
+Output:
+
+Password for Level 20: 0qXahG8ZjOVMN9Ghs7i1Z2Gj3v0ZxH6G
