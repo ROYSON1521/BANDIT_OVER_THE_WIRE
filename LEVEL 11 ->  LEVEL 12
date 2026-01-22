@@ -1,0 +1,24 @@
+🎯 Objective:
+       The password is hidden in a file where:
+             Letters have been rotated by 13 places (ROT13)
+
+Steps to be followed:
+
+Step 1: Login as bandit11
+
+ssh bandit11@bandit.labs.overthewire.org -p 2220
+Password: IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR
+
+Step 2: List files
+
+Command: ls
+Output: data.txt
+
+Step 3: Decode ROT13
+
+Use tr to rotate letters back:
+Command: cat data.txt | tr 'A-Za-z' 'N-ZA-Mn-za-m'
+
+Output:
+
+Password for Level 12: 5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu
