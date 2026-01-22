@@ -1,0 +1,32 @@
+🎯 Objective:
+      Clone a Git repository and find the password inside it.
+
+Steps to be followed:
+
+Step 1: Login as bandit27
+
+ssh bandit27@bandit.labs.overthewire.org -p 2220
+Password: 3ba3118a22e93127a4ed485be72ef5ea
+
+Step 2: Create a temporary directory
+Command: mktemp -d
+Command: cd /tmp/tmp.*
+
+Step 3: Clone the Git repository
+
+Statement: git clone ssh://bandit27-git@localhost/home/bandit27-git/repo
+
+When prompted for a password, enter: 3ba3118a22e93127a4ed485be72ef5ea
+
+Step 4: Enter the repository
+Command: cd repo 
+         ls
+
+You’ll see: README
+
+Step 5: Read the README
+Command: cat README
+
+Output:
+
+Password for Level 28: 0ef186ac70e04ea33b4c1853d2526fa2
