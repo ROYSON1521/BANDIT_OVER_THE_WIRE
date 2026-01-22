@@ -1,0 +1,26 @@
+🎯 Objective:
+    Find the password inside the only human-readable file among many files.
+
+Steps to be followed:
+
+Step 1: Login as bandit4
+   ssh bandit4@bandit.labs.overthewire.org -p 2220
+   Password: pIwrPrtPN36QITSp3EQaw936yaFoFgAB
+
+Step 2: List files
+  Command: ls
+  Output: inhere
+
+Step 3: Enter the directory
+  Command: cd inhere
+
+Step 4: Check file types
+  Output: file ./*
+  You’ll see many files, but only one says ASCII text.
+  Example: (./-file07: ASCII text)
+
+Step 5: Read that file
+  Command: cat ./-file07
+
+Output:
+   Password for Level 5: koReBOKuIDDepwhWk7jZC0RTdopnAYKh
