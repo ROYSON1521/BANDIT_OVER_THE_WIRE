@@ -1,0 +1,23 @@
+🎯 Objective:
+      Get the password by sending it to a local port using netcat (nc).
+
+Steps to be followed:
+
+Step 1: Login as bandit14
+
+ssh bandit14@bandit.labs.overthewire.org -p 2220
+Password: 4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e
+
+Step 2: Read the current password
+
+Command: cat /etc/bandit_pass/bandit14
+Output: 4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e
+
+Step 3: Send the password to port 30000
+
+Use nc (netcat):
+Command: echo 4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e | nc localhost 30000
+
+Output:
+
+Password for Level 15: BfMYroe26WYalil77FoDi9qh59eK5xNr
