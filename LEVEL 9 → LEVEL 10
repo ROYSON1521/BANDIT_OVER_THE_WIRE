@@ -1,0 +1,25 @@
+🎯 Objective:
+      Find the password in a file that:
+           Contains human-readable strings
+           Is preceded by several = characters
+
+Steps to be followed:
+
+Step 1: Login as bandit9
+
+ssh bandit9@bandit.labs.overthewire.org -p 2220
+Password: UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR
+
+Step 2: List files
+
+Command: ls
+Output: data.txt
+
+Step 3: Extract readable strings
+
+Use strings and filter with grep:
+Command: strings data.txt | grep "==="
+
+Output:
+
+Password for Level 10: truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuLk
