@@ -1,0 +1,28 @@
+🎯 Objective:
+       Use a setuid binary owned by bandit27 to read the password.
+
+Steps to be followed:
+
+Step 1: Login as bandit26
+
+ssh bandit26@bandit.labs.overthewire.org -p 2220
+Password: 5czgV9L3X0a0n6uD9wJm9xS5dK0gFq8P
+
+Step 2: List files
+Command: ls
+Output: bandit27-do  text.txt
+
+Step 3: Inspect the binary
+
+Run it without arguments:
+Command: ./bandit27-do
+
+It allows you to execute commands as bandit27 (setuid binary).
+
+Step 4: Use it to read the password
+
+Command: ./bandit27-do cat /etc/bandit_pass/bandit27
+
+Output:
+
+Password for Level 27: 3ba3118a22e93127a4ed485be72ef5ea
