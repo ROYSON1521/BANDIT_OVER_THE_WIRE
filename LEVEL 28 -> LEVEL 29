@@ -1,0 +1,43 @@
+🎯 Objective:
+       Find the password hidden in a Git repository’s history (not in the current file).
+
+Steps to be followed:
+
+Step 1: Login as bandit28
+
+ssh bandit28@bandit.labs.overthewire.org -p 2220
+Password: 0ef186ac70e04ea33b4c1853d2526fa2
+
+Step 2: Create a temp directory
+
+Command: mktemp -d
+Command: cd /tmp/tmp.*
+
+Step 3: Clone the Git repository
+
+git clone ssh://bandit28-git@localhost/home/bandit28-git/repo
+
+When asked for a password, use: 0ef186ac70e04ea33b4c1853d2526fa2
+
+Step 4: Enter the repo
+
+Command: cd repo
+         ls
+You’ll see: README.md
+
+Step 5: Check the file
+
+Command:cat README.md
+You’ll notice the password is removed.
+
+Step 6: Inspect Git commit history
+
+Command: git log
+
+Step 7: View previous versions
+
+Command: git show HEAD~1 (or try older commits if needed)
+
+Output:
+
+Password for Level 29: bbc96594b4e001778eee9975372716b2
