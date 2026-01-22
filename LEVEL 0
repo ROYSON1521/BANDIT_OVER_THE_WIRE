@@ -1,0 +1,21 @@
+🎯 Goal (Level 0)
+
+Log in to the Bandit server.
+
+🔐 Login Details
+
+Username: bandit0
+Password: bandit0
+Host: bandit.labs.overthewire.org
+Port: 2220
+
+🧪 Steps to be performed
+
+1️.Open your terminal (Linux)
+2️.Connect using SSH command.
+    Command or Syntax : ssh bandit0@bandit.labs.overthewire.org -p 2220
+3.When prompted for the password, type:
+bandit0
+
+Successfully Level 0 is completed.
+
