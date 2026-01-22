@@ -1,0 +1,20 @@
+🎯 Objective:
+        Retrieve the password by making an SSL-encrypted connection to a local port.
+
+Steps to be followed:
+
+Step 1: Login as bandit15
+
+ssh bandit15@bandit.labs.overthewire.org -p 2220
+Password: BfMYroe26WYalil77FoDi9qh59eK5xNr
+
+Step 2: Connect using SSL (OpenSSL)
+
+The service runs on port 30001 and requires SSL.
+Command: openssl s_client -connect localhost:30001
+When it connects, give the password for bandit15: BfMYroe26WYalil77FoDi9qh59eK5xNr
+Then press Enter.
+
+Output:
+
+Password for Level 16: cluFn7wTiGryunymYOu4RcffSxQluehd
