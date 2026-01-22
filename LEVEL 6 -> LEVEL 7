@@ -1,0 +1,22 @@
+🎯 Objective:
+     Find the password in a file owned by user bandit7 and group bandit6.
+ 
+Steps to be followed:
+
+Step 1: Login as bandit6
+ssh bandit6@bandit.labs.overthewire.org -p 2220
+Password: DXjZPULLxYr17uwoI01bNLQbtFemEgo7
+
+Step 2: Search the entire system
+
+Use find with ownership filters (ignore permission errors):
+Command: find / -type f -user bandit7 -group bandit6 2>/dev/null
+
+Step 3: Read the file
+
+Output will be: /var/lib/dpkg/info/bandit7.password
+Read it using the command: cat /var/lib/dpkg/info/bandit7.password
+
+Output:
+
+Password for Level 7: HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs
