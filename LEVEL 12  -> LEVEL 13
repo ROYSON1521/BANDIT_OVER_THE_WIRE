@@ -1,0 +1,59 @@
+🎯 Objective:
+      The password is hidden in a file that has been compressed multiple times (gzip, bzip2, tar, etc.). You must extract step by step.
+
+Steps to be followed:
+
+Step 1: Login as bandit12
+ssh bandit12@bandit.labs.overthewire.org -p 2220
+Password: 5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu
+
+Step 2: Create a temporary directory
+
+Command: mktemp -d
+Example output: /tmp/tmp.xxxxx
+(then)
+Move into it: cd /tmp/tmp.xxxxx
+
+Step 3: Copy the data file
+
+Command: cp ~/data.txt .
+
+Step 4: Convert hex → binary
+
+Command: xxd -r data.txt data
+
+Step 5: Extract layer by layer
+
+Command: file data
+         mv data data.gz
+         gzip -d data.gz
+
+Command: file data
+         mv data data.bz2
+         bzip2 -d data.bz2
+
+Command: file data
+         mv data data.gz
+         gzip -d data.gz
+
+Command: file data
+         tar -xf data
+
+Command: file data5.bin
+         tar -xf data5.bin
+
+Command: file data6.bin
+         bzip2 -d data6.bin
+
+Command: file data6.bin.out
+         tar -xf data6.bin.out
+
+Command: file data8.bin
+         gzip -d data8.bin
+
+Step 6: Read the final file
+Command: cat data8
+
+Output:
+
+Password for Level 13: 8ZjyCRiBWFYkneahHwxCv3wb2a1ORpYL
