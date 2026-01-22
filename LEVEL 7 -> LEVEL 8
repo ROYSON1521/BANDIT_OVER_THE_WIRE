@@ -1,0 +1,22 @@
+🎯 Objective:
+   Find the password in a file where:
+      The file contains many lines
+      The password is next to the word millionth
+
+Step 1: Login as bandit7
+
+ssh bandit7@bandit.labs.overthewire.org -p 2220
+Password: HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs
+
+Step 2: List files
+
+Command: ls
+Output: data.txt
+
+Step 3: Search for the word millionth
+
+Use grep command: grep millionth data.txt
+
+Output:
+
+Password for Level 8: cvX2JJa4CFALtqS87jk27qwqGhBM9plV
