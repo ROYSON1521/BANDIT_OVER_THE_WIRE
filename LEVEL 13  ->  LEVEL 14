@@ -1,0 +1,28 @@
+🎯 Objective:
+       Login to the next level using an SSH private key instead of a password.
+
+Steps to followed:
+
+Step 1: Login as bandit13
+ssh bandit13@bandit.labs.overthewire.org -p 2220
+Password: 8ZjyCRiBWFYkneahHwxCv3wb2a1ORpYL
+
+Step 2: List files
+
+Command: ls
+Output: sshkey.private
+
+Step 3: Use the private key to login as bandit14
+
+ssh -i sshkey.private bandit14@localhost -p 2220
+If you get a permission warning, fix it using: chmod 600 sshkey.private
+Then retry the SSH command.
+
+Step 4: Read the password file
+
+Once logged in as bandit14:
+Command: cat /etc/bandit_pass/bandit14
+
+Output:
+
+Password for Level 14: 4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e
