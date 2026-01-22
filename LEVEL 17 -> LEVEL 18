@@ -1,0 +1,31 @@
+🎯 Objective:
+       Find the password by comparing two files and extracting the only changed line.
+
+Steps to be followed:
+
+Step 1: Login as bandit17
+
+ssh bandit17@bandit.labs.overthewire.org -p 2220
+Password: xLYVMN4h6w5tQ2uZx0ydJ4nZZzAxpWnn
+
+Step 2: List files
+
+Command: ls
+Output: passwords.old  passwords.new
+
+Step 3: Compare the files
+
+Use diff to see what changed:
+Command: diff passwords.old passwords.new
+
+Step 4: Extract the password
+
+The line that appears only in passwords.new is the password.
+Look like this:
+        < oldpassword
+        ---
+        > newpassword
+
+Output:
+
+Password for Level 18: kTJ0nXZsG5xGJpZ1yY6bJzKjJ9w4kQ3B
