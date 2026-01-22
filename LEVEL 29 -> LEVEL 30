@@ -1,0 +1,43 @@
+🎯 Objective:
+      Find the password hidden in a different Git branch.
+Steps to be followed:
+
+Step 1: Login as bandit29
+
+ssh bandit29@bandit.labs.overthewire.org -p 2220
+Password: bbc96594b4e001778eee9975372716b2
+
+Step 2: Create a temp directory
+Command: mktemp -d
+         cd /tmp/tmp.*
+
+Step 3: Clone the Git repository
+
+Command: git clone ssh://bandit29-git@localhost/home/bandit29-git/repo
+
+When prompted, enter the same password: bbc96594b4e001778eee9975372716b2
+
+Step 4: Enter the repo
+Command: cd repo
+         ls
+
+Step 5: List all branches
+
+Command: git branch -a
+
+You’ll see something like:
+        remotes/origin/master
+        remotes/origin/dev
+        remotes/origin/sploits-dev
+
+Step 6: Switch to the dev branch
+
+Command: git checkout dev
+
+Step 7: Read the README
+
+Command: cat README.md
+
+Output:
+
+Password for Level 30: 5b90576bedb2cc04c86a9e924ce42faf
