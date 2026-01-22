@@ -1,8 +1,9 @@
 🎯 Objective:
     Find the password stored in a file with spaces in its name.
 
-Step 1: Login as bandit2
+Steps to be followed:
 
+Step 1: Login as bandit2
      ssh bandit2@bandit.labs.overthewire.org -p 2220
      Password: CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9
 
