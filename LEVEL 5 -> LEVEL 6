@@ -1,0 +1,30 @@
+🎯 Objective:
+   Find the password in a file that is:
+     Human-readable
+     1033 bytes in size
+     Not executable
+
+Steps to be followed:
+
+Step 1: Login as bandit5
+
+ssh bandit5@bandit.labs.overthewire.org -p 2220
+Password: koReBOKuIDDepwhWk7jZC0RTdopnAYKh
+
+Step 2: Go to the inhere directory
+
+Command: ls (then give) cd inhere
+Output: You’ll see many subdirectories (maybehere00 to maybehere19).
+
+Step 3: Find the correct file
+
+Use find with conditions: find . -type f -size 1033c ! -executable
+
+Step 4: Read the file
+
+The command will return a path like: ./maybehere07/.file2
+Now read it using this command: cat ./maybehere07/.file2
+
+Output:
+
+Password for Level 6: DXjZPULLxYr17uwoI01bNLQbtFemEgo7
