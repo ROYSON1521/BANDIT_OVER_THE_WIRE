@@ -1,0 +1,37 @@
+🎯 Objective:
+       Find the password hidden in a Git tag.
+
+Steps to be followed:
+
+Step 1: Login as bandit30
+
+ssh bandit30@bandit.labs.overthewire.org -p 2220
+Password: 5b90576bedb2cc04c86a9e924ce42faf
+
+Step 2: Create a temp directory
+Command: mktemp -d
+         cd /tmp/tmp.*
+
+Step 3: Clone the Git repository
+
+Command: git clone ssh://bandit30-git@localhost/home/bandit30-git/repo
+
+When prompted for a password, enter: 5b90576bedb2cc04c86a9e924ce42faf
+
+Step 4: Enter the repo
+
+Command: cd repo
+         ls
+
+Step 5: List Git tags
+
+Command: git tag
+You’ll see something like: secret
+
+Step 6: Show the tag content
+
+Command: git show secret
+
+Output:
+
+Password for Level 31: 47e603bb428404d265f59c42920d81e5
