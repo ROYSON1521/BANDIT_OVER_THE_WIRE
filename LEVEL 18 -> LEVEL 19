@@ -1,0 +1,20 @@
+🎯 Objective:
+      Login despite being immediately logged out, and read the password file.
+
+Steps to be followed:
+
+Step 1: Try normal login (you’ll get kicked)
+
+ssh bandit18@bandit.labs.overthewire.org -p 2220
+Password: kTJ0nXZsG5xGJpZ1yY6bJzKjJ9w4kQ3B
+
+You’ll be logged out instantly due to .bashrc.
+There is a Trick: Execute a command during login
+
+Run a command directly over SSH:
+ssh bandit18@bandit.labs.overthewire.org -p 2220 cat readme
+Enter the password when asked.
+
+Output:
+
+Password for Level 19: cGWpMaK0v1Y0G8h6RjO5H0FJtFf2cK2m
