@@ -1,0 +1,44 @@
+🎯 Objective:
+        Find the correct SSL service port, then retrieve an SSH private key for the next level.
+
+Steps to be followed:
+
+Step 1: Login as bandit16
+
+ssh bandit16@bandit.labs.overthewire.org -p 2220
+Password: cluFn7wTiGryunymYOu4RcffSxQluehd
+
+Step 2: Scan open ports
+
+Ports are between 31000–32000, and one uses SSL.
+Command: nmap -p 31000-32000 localhost
+Output:
+    31518 open ssl/echo
+    31790 open ssl/unknown
+
+Step 3: Connect to the correct SSL port
+
+The correct one is 31790.
+Command: openssl s_client -connect localhost:31790
+When connected, give your bandit16 password: cluFn7wTiGryunymYOu4RcffSxQluehd
+
+Step 4: Save the private SSH key
+
+You’ll receive an SSH private key.
+Copy it completely (from -----BEGIN RSA PRIVATE KEY----- to -----END RSA PRIVATE KEY-----).
+(then)
+Create a file: nano sshkey17
+We should paste the key + save + exit. (then)
+Fix permissions using the command: chmod 600 sshkey17
+
+Step 5: Login as bandit17 using the key
+
+ssh -i sshkey17 bandit17@localhost -p 2220
+
+Step 6: Inorder to get or reveal the password.
+
+Command: cat /etc/bandit_pass/bandit17
+
+Output: 
+
+Password for Level 17: xLYVMN4h6w5tQ2uZx0ydJ4nZZzAxpWnn
