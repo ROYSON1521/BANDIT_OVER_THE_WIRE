@@ -1,0 +1,22 @@
+🎯 Objective:
+        The password is Base64 encoded in a file. You need to decode it.
+
+Steps to be followed:
+
+Step 1: Login as bandit10
+
+ssh bandit10@bandit.labs.overthewire.org -p 2220
+Password: truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuLk
+
+Step 2: List files
+
+Command: ls
+Output: data.txt
+
+Step 3: Decode Base64
+
+Command: base64 -d data.txt
+
+Output:
+
+Password for Level 11: IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR
