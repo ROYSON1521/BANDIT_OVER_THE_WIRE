@@ -1,0 +1,34 @@
+🎯 Objective:
+     Find the password by inspecting a cron job that runs automatically.
+
+Steps to be followed:
+
+Step 1: Login as bandit21
+
+ssh bandit21@bandit.labs.overthewire.org -p 2220
+Password: EeoULMCra2q0a1zN9G7dY6sXy5BfN3RP
+
+Step 2: Check cron jobs
+
+Cron jobs are stored here: ls /etc/cron.d
+You’ll see: cronjob_bandit22
+
+Step 3: Read the cron job
+
+Command: cat /etc/cron.d/cronjob_bandit22
+It will point to a script. Like this: /usr/bin/cronjob_bandit22.sh
+
+Step 4: Read the script
+
+Command: cat /usr/bin/cronjob_bandit22.sh
+You’ll see something like:
+Command or Statement: cat /etc/bandit_pass/bandit22 > /tmp/t7O6lds...
+
+Step 5: Read the output file
+
+Copy the /tmp/... filename from the script and run:
+Command: cat /tmp/t7O6lds...
+
+Output:
+
+Password for Level 22: Yk7owGAcWjwMVRwrTesJEwM5sdRk4bFg
