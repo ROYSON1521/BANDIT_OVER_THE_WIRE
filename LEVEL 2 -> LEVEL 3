@@ -1,0 +1,17 @@
+🎯 Objective:
+    Find the password stored in a file with spaces in its name.
+
+Step 1: Login as bandit2
+
+     ssh bandit2@bandit.labs.overthewire.org -p 2220
+     Password: CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9
+
+Step 2: List files
+  command used: ls
+  Output: spaces in this filename (It is a file) 
+
+Step 3: Read the file
+  Since the filename contains spaces, use this command or syntax: cat "spaces in this filename"
+
+Output:
+     Password for Level 3: UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK
