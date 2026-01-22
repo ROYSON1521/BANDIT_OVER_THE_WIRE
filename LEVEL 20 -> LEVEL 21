@@ -1,0 +1,34 @@
+🎯 Objective:
+       Use a setuid program that listens on a port and sends back the password only if it receives the correct current password.
+
+Steps to be followed:
+
+Step 1: Login as bandit20
+
+ssh bandit20@bandit.labs.overthewire.org -p 2220
+Password: 0qXahG8ZjOVMN9Ghs7i1Z2Gj3v0ZxH6G
+
+Step 2: List files
+
+Command: ls
+Output: suconnect
+
+Step 3: Understand the program
+
+Statement or command: ./suconnect
+It:
+    Listens on a TCP port
+    Expects the bandit20 password
+    Returns the bandit21 password
+
+Step 4: Open two terminals (important)
+
+Terminal 1 — start the listener
+Choose a port (example: 1234): ./suconnect 1234
+
+Terminal 2 — send the password
+Command: echo 0qXahG8ZjOVMN9Ghs7i1Z2Gj3v0ZxH6G | nc localhost 1234
+
+Output:
+
+Password for Level 21: EeoULMCra2q0a1zN9G7dY6sXy5BfN3RP
