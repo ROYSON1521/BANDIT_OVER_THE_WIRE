@@ -3,24 +3,20 @@
 
 🔐 Login Details
 
-Username: bandit0
-Password: bandit0
-Host: bandit.labs.overthewire.org
-Port: 2220
+   Username: bandit0
+   Password: bandit0
+   Host: bandit.labs.overthewire.org
+   Port: 2220
 
 🧪 Steps to be performed:
-1️. Open your terminal (Linux / macOS / Git Bash / WSL)
-2️. Connect using SSH
-     ssh bandit0@bandit.labs.overthewire.org -p 2220
-3.When prompted for the password, type:
-bandit0
-4. List files in the home directory
-ls
-You will see a file named:
-readme
-4️. Read the file
-cat readme
+   1️. Open your terminal (Linux)
+   2️. Connect using SSH
+       ssh bandit0@bandit.labs.overthewire.org -p 2220
+   3.When prompted for the password, type: bandit0
+   4. List files in the home directory: ls
+      You will see a file named: readme
+   5. Read the file: cat readme
 
-✅ Output
+✅ Output:
       The password for Level 1 is boJ9jbbUNNfktd78OOpsqOltutMc3MY1
 
