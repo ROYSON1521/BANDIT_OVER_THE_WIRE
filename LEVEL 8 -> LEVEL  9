@@ -1,0 +1,23 @@
+🎯 Objective:
+     Find the password in a file where:
+        All lines are unique except one
+        The unique line is the password
+
+Steps to be followed:
+
+Step 1: Login as bandit8
+
+ssh bandit8@bandit.labs.overthewire.org -p 2220
+Password: cvX2JJa4CFALtqS87jk27qwqGhBM9plV
+
+Step 2: List files
+Command: ls
+Output: data.txt
+
+Step 3: Find the unique line
+
+Use sort + uniq command: sort data.txt | uniq -u
+
+Output:
+
+Password for Level 9: UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR
