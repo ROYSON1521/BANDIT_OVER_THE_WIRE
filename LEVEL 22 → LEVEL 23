@@ -1,0 +1,44 @@
+🎯 Objective:
+       Figure out how a cron job creates a file name dynamically and read the password from it.
+
+Step 1: Login as bandit22
+
+ssh bandit22@bandit.labs.overthewire.org -p 2220
+Password: Yk7owGAcWjwMVRwrTesJEwM5sdRk4bFg
+
+Step 2: Check cron jobs
+
+Command: ls /etc/cron.d
+You’ll see: cronjob_bandit23
+
+Step 3: Read the cron job
+
+Command: cat /etc/cron.d/cronjob_bandit23
+It will point to a script like this: /usr/bin/cronjob_bandit23.sh
+
+Step 4: Read the script
+
+Command: cat /usr/bin/cronjob_bandit23.sh
+
+You’ll see something like:
+              myname=$(whoami)
+              mytarget=$(echo I am user $myname | md5sum | cut -d ' ' -f1)
+              cat /etc/bandit_pass/$myname > /tmp/$mytarget
+
+(⚠️ Important:
+The script runs as bandit23, not bandit22.)
+
+Step 5: Recreate the filename manually
+
+You must calculate the same hash for bandit23:
+
+Command: echo I am user bandit23 | md5sum
+Example output: 8ca319486bfbbc3663ea0fbe81326349  -
+
+Step 6: Read the generated file
+
+Command: cat /tmp/8ca319486bfbbc3663ea0fbe81326349
+
+Output:
+
+Password for Level 23: jc1udXuA1tiHqjIsL8yaapX5Xia1mUuH
